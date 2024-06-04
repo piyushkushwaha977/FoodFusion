@@ -198,7 +198,7 @@ return searchedRestaurant?.length === 0 ? (
     <div className="flex flex-col ">
      <div className="flex w-96  ">
       <input 
-        className="w-72 ml-28 md:ml-0  rounded-md text-center md:w-full"
+        className="w-72 ml-20 md:ml-0  rounded-md text-center md:w-full"
         type="text"
         placeholder= "Search For Restaurant"
         value={searchText}
@@ -234,7 +234,7 @@ return searchedRestaurant?.length === 0 ? (
       </div>
   </div>
 
-  <div className="all-cards relative w-11/12 max-w-[1080px] mx-auto flex flex-wrap ">
+  <div className="all-cards relative ml-9 w-11/12 max-w-[1080px] md:mx-auto flex flex-wrap ">
     {  searchedRestaurant.map( (restaurant) => (
 
   <Link to={"/restaurants/" + restaurant?.info?.id}

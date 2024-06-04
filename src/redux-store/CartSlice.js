@@ -23,7 +23,7 @@ const cartSlice = createSlice({
         (cartItem) => cartItem?.item?.card?.info?.id !== action.payload.id
       );
       localStorage.setItem('cart', JSON.stringify(state.items));
-      toast.success("Item Delted")
+      toast.success("Item Deleted")
     },
 
     increaseItemQuantity: (state, action) => {

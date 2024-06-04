@@ -119,16 +119,16 @@ export const Header = () =>  {
               </div>
 
     {mobileDrawerOpen && 
-       <div className="w-full mt-[270px]  absolute rounded-2xl z-50 ">
-        <ul className="w-11/12 mx-auto bg-black opacity-90 gap-y-4 flex flex-col justify-center items-center rounded-lg text-lg ">
+       <div className="w-full mt-[500px]  absolute rounded-2xl z-50 ">
+        <ul className="w-11/12 mx-auto py-8 bg-black opacity-90 gap-y-14 flex flex-col justify-center items-center rounded-lg text-lg ">
           <li className="text-orange-500 hover:text-blue-800">
-            <Link to="/"className=" flex items-center gap-1">
+            <Link to="/" className=" flex items-center gap-1">
              <IoHome class="text-xl"/> 
             <p>Home</p>
             </Link>
           </li>
           <li className="text-orange-500 hover:text-blue-800">
-            <Link to="/about"className=" flex items-center gap-1">
+            <Link to="/about" className=" flex items-center gap-1">
              <RiInformation2Fill className="text-xl"/> 
             <p>About</p>
             </Link>

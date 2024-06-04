@@ -1,5 +1,5 @@
 import ItemList from "./ItemList";
-import { FaArrowAltCircleDown } from "react-icons/fa";
+import { FaArrowAltCircleDown,FaArrowAltCircleUp } from "react-icons/fa";
 
 const RestaurantCategory = ({index, data, setShowIndex, showIndex }) => {
    
@@ -20,7 +20,8 @@ const RestaurantCategory = ({index, data, setShowIndex, showIndex }) => {
           ({data.itemCards.length})
           </span>
         </div>
-          <span className="text-xl mt-2 md:text-2xl md:mr-5"><FaArrowAltCircleDown/></span>
+          <span className="text-xl mt-2 md:text-2xl md:mr-5"> <FaArrowAltCircleDown/>  </span>
+          {/* TODO: {showIndex ? <FaArrowAltCircleUp/> : <FaArrowAltCircleDown/>} */}
         </div>
 
         {showIndex === index && <ItemList items={data.itemCards} />}
