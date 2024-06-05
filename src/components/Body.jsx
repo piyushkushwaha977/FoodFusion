@@ -2,7 +2,7 @@ import RestaurantCard,{topRatedRestaurants} from "./RestaurantCard";
 import ShimmerRestaurant from "./BodyShimmer";
 import { Link } from "react-router-dom";
 import { useState,useEffect,useRef,useCallback } from "react";
-import { API_URL , HOME_LAYOUT_IMG_URL} from "../utils/constant";
+import { RESTAURANT_API_URL , HOME_LAYOUT_IMG_URL} from "../utils/constant";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import useFilterRestaurants from "../utils/useFilterRestaurants"
 import useEmblaCarousel from 'embla-carousel-react'
@@ -41,7 +41,7 @@ const Body = () => {
 }, [])
 
 const fetchData = async() => {
-  const apiResponse = await fetch(process.env.RESTAURANTS_API_KEY + API_URL) 
+  const apiResponse = await fetch(RESTAURANT_API_URL) 
   const data = await apiResponse.json()
   // console.log("SWIGGY API FETCHED AND DATA... ")
   // console.log(data)
