@@ -11,7 +11,7 @@ const useRestaurantMenu = (resId) => {
 
     const fetchMenuDetails = async() => {
 
-        const apiResponse = await fetch(MENU_API + resId)
+        const apiResponse = await fetch(process.env.RESTAURANTS_API_KEY + MENU_API + resId)
         const data = await apiResponse.json()
 
         //console.logssss

@@ -2,7 +2,7 @@ import RestaurantCard,{topRatedRestaurants} from "./RestaurantCard";
 import ShimmerRestaurant from "./BodyShimmer";
 import { Link } from "react-router-dom";
 import { useState,useEffect,useRef,useCallback } from "react";
-import { RESTAURANTS_API , HOME_LAYOUT_IMG_URL} from "../utils/constant";
+import { API_URL , HOME_LAYOUT_IMG_URL} from "../utils/constant";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import useFilterRestaurants from "../utils/useFilterRestaurants"
 import useEmblaCarousel from 'embla-carousel-react'
@@ -22,8 +22,9 @@ const Body = () => {
   // const [isLoading, setIsLoading] = useState(true)
   // console.log("image table " , imageTable)
   const onlineStatus = useOnlineStatus()
-
   const TopRestaurants = topRatedRestaurants(RestaurantCard)
+
+  
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev()
@@ -32,13 +33,15 @@ const Body = () => {
   const scrollNext = useCallback(() => {
     if (emblaApi) emblaApi.scrollNext()
   }, [emblaApi])
+
+
   
   useEffect(() => {
     fetchData()
 }, [])
 
 const fetchData = async() => {
-  const apiResponse = await fetch(RESTAURANTS_API) 
+  const apiResponse = await fetch(process.env.RESTAURANTS_API_KEY + API_URL) 
   const data = await apiResponse.json()
   // console.log("SWIGGY API FETCHED AND DATA... ")
   // console.log(data)
@@ -217,7 +220,7 @@ return searchedRestaurant?.length === 0 ? (
       </button>
      </div>
     <div>
-    {errorMessage && <div className="text-[12px] md:text-[15px] font-bold mt-2 ml-28 md:ml-0 md:min-w-full overflow-hidden"> NOTHING FOUND FOR :-
+    {errorMessage && <div className="text-[12px] md:text-[15px] font-bold mt-2 ml-28 md:ml-0 md:min-w-full truncate"> NOTHING FOUND FOR :-
         <span className=" h-5 text-red-500  text-lg  max-w-full ">  {searchText}</span>
       </div>}
     </div>
@@ -234,10 +237,10 @@ return searchedRestaurant?.length === 0 ? (
       </div>
   </div>
 
-  <div className="all-cards relative ml-9 w-11/12 max-w-[1080px] md:mx-auto flex flex-wrap ">
-    {  searchedRestaurant.map( (restaurant) => (
+  <div className="all-cards relative w-full md:w-11/12  max-w-[1080px] md:mx-auto flex flex-wrap">
+    {searchedRestaurant.map( (restaurant) => (
 
-  <Link to={"/restaurants/" + restaurant?.info?.id}
+  <Link className=" mx-auto" to={"/restaurants/" + restaurant?.info?.id}
         key={restaurant?.info?.id}
   >    
     <div  >
@@ -245,11 +248,12 @@ return searchedRestaurant?.length === 0 ? (
        <TopRestaurants restaurantData={restaurant}/> 
                           : 
        <RestaurantCard restaurantData={restaurant}/>}
+       
     </div> 
   </Link>
   ))}
-</div> 
-  </div>) 
+  </div> 
+</div>) 
 }
 
 

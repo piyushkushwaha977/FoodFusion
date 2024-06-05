@@ -10,7 +10,7 @@ import { CDN_URL } from "../utils/constant";
 
 const CartItemList = () => {
   const cartItems = useSelector(selectItemsInCart);
-   console.log("CARTITEMS FOR CART--" , cartItems)
+  //  console.log("CARTITEMS FOR CART--" , cartItems)
   const dispatch = useDispatch();
 
   const removeItem = (id) => dispatch(removeFromCart({ id }));

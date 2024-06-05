@@ -14,11 +14,11 @@ export const HOME_LAYOUT_IMG_URL =
  
 
 export const  MENU_API = 
-  "https://cors-handlers.vercel.app/api/?url=%20https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Fmenu%2Fpl%3Fpage-type%3DREGULAR_MENU%26complete-menu%3Dtrue%26lat%3D22.71700%26lng%3D75.83370%26restaurantId%3D"
+  "api/?url=%20https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Fmenu%2Fpl%3Fpage-type%3DREGULAR_MENU%26complete-menu%3Dtrue%26lat%3D22.71700%26lng%3D75.83370%26restaurantId%3D"
  
 
-export const RESTAURANTS_API = 
- "https://cors-handlers.vercel.app/api/?url=https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D22.71700%26lng%3D75.83370%26is-seo-homepage-enabled%3Dtrue%26page_type%3DDESKTOP_WEB_LISTING"
+export const API_URL = 
+  "api/?url=https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D22.71700%26lng%3D75.83370%26is-seo-homepage-enabled%3Dtrue%26page_type%3DDESKTOP_WEB_LISTING"
 
 
 

@@ -96,7 +96,8 @@ export const Header = () =>  {
          <button
            className=" mt-1 mx-1"
            onClick={toggleNavbar}>
-             {!mobileDrawerOpen ? <IoMenuSharp className="size-[25px]"/> : <AiFillCloseSquare className="size-[30px]"/>}
+             {!mobileDrawerOpen ? <IoMenuSharp className="size-[25px]"/> : 
+                                  <AiFillCloseSquare className="size-[30px]"/>}
           </button>
       </div>
 
@@ -123,7 +124,7 @@ export const Header = () =>  {
         <ul className="w-11/12 mx-auto py-8 bg-black opacity-90 gap-y-14 flex flex-col justify-center items-center rounded-lg text-lg ">
           <li className="text-orange-500 hover:text-blue-800">
             <Link to="/" className=" flex items-center gap-1">
-             <IoHome class="text-xl"/> 
+             <IoHome className="text-xl"/> 
             <p>Home</p>
             </Link>
           </li>
@@ -142,7 +143,7 @@ export const Header = () =>  {
           <li className="text-orange-500 hover:text-blue-800 ">
             <Link to="/contact" className=" flex items-center gap-1">
              <MdCall className="text-xl"/> 
-            <p>Contact<span className="hidden md:block">Us</span></p>
+            <p>Contact Us</p>
             </Link>
           </li>
               <li className="text-white  md:mr-10">

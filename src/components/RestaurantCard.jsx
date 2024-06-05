@@ -17,9 +17,10 @@ const RestaurantCard = (props) => {
     const limitedCuisineName = cuisines?.join(", ").substring(0,30)
     // console.log("cuisines name" , limitedCuisineName)
 
-return ( <div className="flex flex-col overflow-hidden m-3 p-3 w-72 md:w-60 rounded-sm hover:shadow-xl duration-300 font-poppins
-                           bg-white shadow-sm ">
-  <div >
+return (
+<div className="flex flex-col overflow-hidden m-3 p-3 w-72 md:w-60 rounded-sm mx-auto md:mx-0
+    hover:shadow-xl duration-300 font-poppins bg-white shadow-sm ">
+  <div className="">
     <div>
      <img
       loading="lazy"
@@ -66,7 +67,7 @@ export default RestaurantCard;
 // HIGH ORDER COMPONENT FOR RESTAU CARD 
 export const topRatedRestaurants = (RestaurantCard) => {
     return (props) => {
-        return (<div className='relative'>
+        return (<div className='relative '>
         <p className='absolute z-10   rounded-md p-2 px-4 bg-zinc-900 text-white text-xs'>
           Top Rated '⭐'
         </p>

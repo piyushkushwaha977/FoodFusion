@@ -23,12 +23,13 @@ const cartSlice = createSlice({
         (cartItem) => cartItem?.item?.card?.info?.id !== action.payload.id
       );
       localStorage.setItem('cart', JSON.stringify(state.items));
-      toast.success("Item Deleted")
+      toast.success("Deleted from Cart")
     },
 
     increaseItemQuantity: (state, action) => {
       const { id } = action.payload;
-
+      // console.log("INCREASE ITEM QUANTITY STATE " , JSON.parse(JSON.stringify(state)))
+      // console.log("INCREASE ITEM QUANTITY ACTION" , action)
       const itemToIncrease = state.items.find(
         (cartItem) => cartItem?.item?.card?.info?.id === id
       );
@@ -36,6 +37,7 @@ const cartSlice = createSlice({
       if (itemToIncrease) {
         itemToIncrease.quantity += 1;
         localStorage.setItem('cart', JSON.stringify(state.items));
+        // console.log("added items array ", JSON.parse(JSON.stringify(state.items)))
       }
     },
     decreaseItemQuantity: (state, action) => {
@@ -57,15 +59,21 @@ const cartSlice = createSlice({
   },
 });
 
-export const selectItemsInCart = ({ cart }) => cart?.items;
+export const selectItemsInCart = ({ cart }) => cart?.items ;
+
 
 export const selectTotalPrice = ({ cart }) => {
     // console.log("CART-ITEMS PRICE " , cart)
   return cart?.items.reduce((total, cartItem) => {
-    return total + cartItem?.item?.card?.info?.price || 
-           cartItem?.item?.card?.info?.defaultPrice * cartItem.quantity;
+   
+    return  cartItem?.item?.card?.info?.price ? 
+    total + cartItem?.item?.card?.info?.price * cartItem.quantity
+                            :
+    total + cartItem?.item?.card?.info?.defaultPrice * cartItem.quantity                 
+
   }, 0);
 };
+
 
 export const {
   addToCart,

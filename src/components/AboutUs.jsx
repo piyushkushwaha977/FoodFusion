@@ -22,7 +22,7 @@ const  AboutUs = () => {
       </div>
 
       <p>
-        Yummy is a food ordering web application built with React.js ⚛ and 
+       <span className=" text-orange-500 font-bold text-2xl"> Foodfusion</span>  is a food ordering web application built with React.js ⚛ and 
         <span className='text-orange-800 font-bold'> Swiggy's Own API.</span>
       </p>
       <p>
@@ -41,6 +41,8 @@ const  AboutUs = () => {
           Akshay Saini
         </a>
       </p>
+{/* 
+      <h2>THIS APP IS BUILD BY PIYUSH </h2> */}
 
     </div>
   </div>
