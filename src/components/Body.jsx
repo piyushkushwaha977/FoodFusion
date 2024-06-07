@@ -190,18 +190,18 @@ return searchedRestaurant?.length === 0 ? (
   
   {/* For Mobile  */}
   <h2 className="hidden max-w-[720px] h-7 mx-auto  md:mt-12 mb-6 leading-4 text-center text-2xl font-poppins font-bold shadow-md shadow-orange-400 
-                         lg:block">
+                         md:block">
       Top Restaurants with online food delivery in Your Area</h2>
 
   <h2 className=" h-7 mx-auto mt-12 mb- leading-4 text-center text-2xl font-poppins font-bold shadow-md shadow-orange-400 
                       md:hidden">
      ⭐ Top Rated Restaurants ⭐</h2>
 
-  <div className="feature-container w-full mt-6 mb-4  md:right-0 flex flex-row space-x-20 justify-center">
+  <div className="feature-container w-full mt-6 mb-4  md:right-0 flex flex-row space-x-15 justify-center">
     <div className="flex flex-col ">
-     <div className="flex w-96  ">
+     <div className="flex w-full mx-6 md:w-96  ">
       <input 
-        className="w-72 ml-20 md:ml-0  rounded-md text-center md:w-full"
+        className="w-72  rounded-md text-center md:w-full"
         type="text"
         placeholder= "Search For Restaurant"
         value={searchText}
@@ -220,14 +220,14 @@ return searchedRestaurant?.length === 0 ? (
       </button>
      </div>
     <div>
-    {errorMessage && <div className="text-[12px] md:text-[15px] font-bold mt-2 ml-28 md:ml-0 md:min-w-full truncate"> NOTHING FOUND FOR :-
+    {errorMessage && <div className="text-[12px] w-96 md:text-[15px] font-bold mt-2 ml-4 md:ml-0  md:min-w-full  truncate"> {" "}  NOTHING FOUND FOR :-
         <span className=" h-5 text-red-500  text-lg  max-w-full ">  {searchText}</span>
       </div>}
     </div>
     </div>
 
-      <div className="topResContainer border-2 h-11 rounded-xl border-orange-400 bg-orange-500 p-2 cursor-pointer hover:bg-orange-800 transition-all duration-300 ">
-      <button className="  text-white font-sans font-bold hidden md:block "
+      <div className="topResContainer hidden md:block border-2 h-11 rounded-xl border-orange-400 bg-orange-500 p-2 cursor-pointer hover:bg-orange-800 transition-all duration-300 ">
+      <button className="  text-white font-sans font-bold  "
          onClick={ () => {
           let topRatedRes =  listOfRestaurant.filter((restaurant) => restaurant?.info?.avgRating >= 4.2 )
               return   setSearchedRestaurant(topRatedRes)}}>

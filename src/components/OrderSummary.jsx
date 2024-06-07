@@ -3,6 +3,7 @@ import {
   selectItemsInCart,
   selectTotalPrice,
 } from '../redux-store/CartSlice';
+import toast from 'react-hot-toast';
 
 const OrderSummary = () => {
   const cartItems = useSelector(selectItemsInCart);
@@ -56,7 +57,9 @@ const OrderSummary = () => {
         </div>
       </div>
 
-      <button className='w-full block mt-4 uppercase font-bold text-lg bg-orange-600 text-white text-center p-4 rounded-md'>
+      <button  
+       onClick={() => toast.success("ORDER PLACED")}
+       className='w-full block mt-4 uppercase font-bold text-lg bg-orange-600 text-white text-center p-4 rounded-md'>
         Place order
       </button>
     </div>

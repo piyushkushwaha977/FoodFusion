@@ -5,9 +5,9 @@ const RestaurantCategory = ({index, data, setShowIndex, showIndex }) => {
    
  
   return (
-    <div className=" bg-[#eaeaea]">
+    <div className=" bg-[#eaeaea] w-full ">
       {/* Header */}
-      <div className="w-9/12 mx-auto my-4 shadow-lg p-4">
+      <div className="md:w-9/12 mx-4 md:mx-auto my-4 shadow-lg p-4">
         <div
           className="flex justify-between cursor-pointer"
           onClick={() => setShowIndex(index)}

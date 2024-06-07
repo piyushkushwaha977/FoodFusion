@@ -28,11 +28,11 @@ export const Header = () =>  {
     
 
     return (
-        <div className=" fixed md:ml-[150px] mb-40 rounded-sm flex justify-between items-center shadow-lg z-50 shadow-1xl w-full max-w-[1400px]
-                         bg-slate-50 ">
-          {/* {console.log("header re-render")} */}
+        <div className=" fixed mb-40 w-full rounded-sm  shadow-lg z-50 
+                          bg-slate-50 ">
+          <div className=" md:max-w-[1400px] mx-auto flex justify-between items-center" >
           <Link to="/">
-          <div className=" flex  ml-5 font-fira-poppins items-center relative font-extrabold text-2xl p-4">
+          <div className="hidden md:flex ml-5 font-fira-poppins items-center relative font-extrabold text-2xl p-4">
             Food <span className=" text-orange-600 md:text-3xl">fusion</span>
               <GiBloodyStash className="inline md:text-2xl"/>
           </div>
@@ -58,7 +58,7 @@ export const Header = () =>  {
             <p>Help</p>
             </Link>
           </li>
-          <li className=" md:mr-10 hover:text-black ">
+          <li className=" md:mr-6 hover:text-black ">
             <Link to="/contact" className=" flex items-center gap-1">
              <MdCall className="text-xl"/> 
             <p>ContactUs</p>
@@ -79,30 +79,30 @@ export const Header = () =>  {
                   </span>
                 </Link>
               </li>
-          <Link to='/location'>
-            <div className="cursor-pointer  md:px-3 md:mr-10 mb-2 flex items-center ">
+          <Link to='/location' className="hidden lg:block">
+            <div className="cursor-pointer  md:px-3 md:mr-6 mb-2 flex items-center ">
                 <TbCurrentLocation className="text-xl text-orange-400" />Location
                 </div>
           </Link>
             </ul>
           </div>
-
+          </div> 
 
           {/* <button>login</button> */}
 
 
 
-      <div className="bg-orange-500  md:hidden mr-4 rounded-lg">
-         <button
-           className=" mt-1 mx-1"
-           onClick={toggleNavbar}>
-             {!mobileDrawerOpen ? <IoMenuSharp className="size-[25px]"/> : 
-                                  <AiFillCloseSquare className="size-[30px]"/>}
-          </button>
-      </div>
-
       {/* For MOBILE NAVBAR  */}
-      <div className="text-white md:hidden absolute right-0 mr-20 ">
+    <div className=" w-full flex justify-between  ">
+      <Link to="/">
+          <div className=" md:hidden  font-fira-poppins items-center relative font-extrabold text-2xl p-4">
+            Food <span className=" text-orange-600 ">fusion</span>
+              <GiBloodyStash className="inline "/>
+          </div>
+      </Link>
+       
+    <div  className="flex md:hidden items-center justify-center space-x-5 mr-4">  
+      <div className="text-white   ">
                 <Link
                   to="/cart"
                   className="flex gap-1 items-center"
@@ -119,8 +119,19 @@ export const Header = () =>  {
                 </Link>
               </div>
 
+      <div className="bg-orange-500  md:hidden mr-4 rounded-lg">
+         <button
+           className=" mt-1 mx-1"
+           onClick={toggleNavbar}>
+             {!mobileDrawerOpen ? <IoMenuSharp className="size-[25px]"/> : 
+                                  <AiFillCloseSquare className="size-[30px]"/>}
+          </button>
+      </div>   
+    </div>
+   </div>    
+
     {mobileDrawerOpen && 
-       <div className="w-full mt-[500px]  absolute rounded-2xl z-50 ">
+       <div className="w-full absolute rounded-2xl z-50  ">
         <ul className="w-11/12 mx-auto py-8 bg-black opacity-90 gap-y-14 flex flex-col justify-center items-center rounded-lg text-lg ">
           <li className="text-orange-500 hover:text-blue-800">
             <Link to="/" className=" flex items-center gap-1">
@@ -164,8 +175,8 @@ export const Header = () =>  {
             </ul>
           
         </div>}
-
-        </div>)
+       
+    </div>)
 }
 
 export default Header;

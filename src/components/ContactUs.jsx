@@ -13,8 +13,8 @@ const details = {
 
 const ContactUs = () => {
   return ( 
-    <div className=" relative w-full md:w-10/12 md:mx-auto md:my-64 bg-[#eaeaea]">
-    <div className='container-max mx-auto mt-24 ml-10 md:ml-96 '>
+    <div className=" relative w-full     bg-[#eaeaea]">
+    <div className='container-max w-96 mx-auto my-40 shadow-sm '>
       <h1 className='text-2xl my-4 font-bold'>Contact</h1>
       <div>
         <h2 className='text-xl font-semibold'>Hi 👋, I'm {details.name} 👩‍💻</h2>
