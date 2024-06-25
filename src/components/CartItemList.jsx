@@ -28,7 +28,8 @@ const CartItemList = () => {
   }
 
   return (
-    <ul className='basis-7/12'>
+  <div className=' px-3 bg-gray-300  max-h-[400px] md:max-h-[700px] overflow-y-scroll rounded-md'>  
+    <ul className='basis-7/12  bg-slate-100'>
       {cartItems &&
         cartItems.map((item) => (
           <li
@@ -74,7 +75,7 @@ const CartItemList = () => {
               </p>
 
               {/* actions */}
-              <div className='flex justify-between items-center mt-2'>
+              <div className='flex justify-between items-center mt-2 px-2'>
                 <div className='flex items-center'>
                   <button
                     onClick={() => decreaseQuantity(item?.item?.card?.info?.id)}
@@ -98,7 +99,7 @@ const CartItemList = () => {
 
                 <button
                   onClick={() => removeItem(item?.item?.card?.info?.id) }
-                  className='border border-orange-500 text-xs font-semibold text-orange-500 p-2 px-4 rounded-md'
+                  className='border bg-white border-orange-500 text-xs font-semibold text-orange-500 p-2 px-4 rounded-md'
                 >
                   Remove
                 </button>
@@ -107,6 +108,7 @@ const CartItemList = () => {
           </li>
         ))}
     </ul>
+</div>    
   );
 };
 

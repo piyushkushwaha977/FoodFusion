@@ -37,7 +37,7 @@ const ItemList = ({ items }) => {
                 </strike>
                   :
                 <span className="font-bold font-poppins text-[12px] md:text-xl text-red-600">
-                 -  ₹ {item.card.info.price
+                   ₹ {item.card.info.price
                   ? item?.card?.info?.price / 100
                   : item?.card?.info?.defaultPrice / 100}
                  </span>} {" "}

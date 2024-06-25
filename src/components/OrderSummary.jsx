@@ -25,8 +25,8 @@ const OrderSummary = () => {
 
  
   return (
-    <div className='basis-5/12 h-fit sticky top-40 p-8 rounded-md border shadow-md my-8 md:m-0'>
-      <h2 className='text-xl font-bold border-b pb-4'>Order Summary</h2>
+    <div className='basis-5/12 h-fit sticky top-40 p-4 md:p-8 rounded-md border shadow-md  md:m-0'>
+      <h2 className='text-2xl font-bold border-b  md:pb-4'>Order Summary</h2>
 
       {/* order details */}
       <div className='py-4 text-lg space-y-4 border-b'>
@@ -62,6 +62,11 @@ const OrderSummary = () => {
        className='w-full block mt-4 uppercase font-bold text-lg bg-orange-600 text-white text-center p-4 rounded-md'>
         Place order
       </button>
+
+      {/* <button class="btn">
+        Watch Or Soch
+      </button> */}
+
     </div>
   );
 };

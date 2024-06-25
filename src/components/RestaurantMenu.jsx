@@ -50,9 +50,9 @@ return(
     <div className=" w-full mb-8 ">
         <h1 className="font-bold my-2 mt-6 text-2xl text-blue-950 ml-8 md:ml-20 font-poppins">{name}</h1>
         {/* MAIN CARD FOR MENU RESTAURANTS COMPONENT */}
-      <div className=' w-10/12 mx-auto flex  md:p-4 justify-between items-start bg-white shadow-md sha shadow-gray-600 rounded-3xl'>
+      <div className=' w-11/12 md:w-9/12 mx-auto flex md:py-4 justify-between items-start bg-white shadow-md shadow-gray-600 rounded-3xl'>
         {/* RIGHT-SECTION */}
-        <div className='w-full md:w-8/12 border border-gray-500 rounded-3xl p-6 md:ml-6 shadow-md shadow-orange-400 '>
+        <div className='w-full md:w-8/12 border border-gray-500 rounded-3xl p-8 md:ml-6 shadow-md shadow-orange-400 '>
           <div 
           className=' font-extrabold font-poppins'
           ><span className='text-xl -ml-2'><FaStar className='inline mb-1 text-green-500'/>{avgRating} ({totalRatingsString})</span>
@@ -65,13 +65,13 @@ return(
 
           <div className='border border-b-slate-200'></div>
 
-          <div> <FaBiking className='inline size-6 text-[15px] md:text-xl'/> {cleanedStr}</div>
+          <div className=' mt-2'> <FaBiking className='inline size-6 text-[15px] md:text-xl'/> {cleanedStr}</div>
 
         </div>
         {/* LEFT-SECTION-FOR-IMAGE */}
         <div className='hidden  md:block'>
           <img
-          className=' relative w-56 mr-6 min-h-[220px] overflow-hidden aspect-video object-cover block rounded-md shadow-md shadow-black' 
+          className=' relative w-56 mr-6 min-h-[240px] overflow-hidden aspect-video object-cover block rounded-md shadow-md shadow-black' 
           src={CDN_URL + cloudinaryImageId} alt='MENU-CARD-IMAGE'/>
         </div>
       </div>
