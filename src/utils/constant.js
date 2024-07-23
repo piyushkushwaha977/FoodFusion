@@ -76,3 +76,14 @@ export const FAQ = [
       "We currently do not support this functionality. However, you can place orders for individual items from different restaurants.",
   },
 ];
+
+
+
+export const Links =   {
+
+  twitter:"https://x.com/piyushdev977",
+  github:"https://github.com/piyushkushwaha977",
+  linkedin:"https://www.linkedin.com/in/piyush-kushwaha-085967319/",
+  instagram:"https://www.instagram.com/piyushkushwaha378/"
+  
+}

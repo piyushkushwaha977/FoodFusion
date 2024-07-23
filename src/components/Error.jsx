@@ -5,7 +5,7 @@ import errorImage from "../../assests/errror.image.jpg"
 const Error = () => {
 
     const err = useRouteError()
-    
+    // console.log(err , "from useRouteError")
     return (
         <div className="flex flex-col justify-center items-center h-screen text-center bg-[#ecf0f1] overflow-y-hidden">
           <img

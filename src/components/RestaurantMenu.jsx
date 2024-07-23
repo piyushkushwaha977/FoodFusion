@@ -18,6 +18,7 @@ const RestaurantMenu = () => {
   const [showIndex, setShowIndex] = useState(0);
 
   const handleClick = (index) => {
+    console.log("index from restaurant catergory : ", index)
     if(index === showIndex) {
       setShowIndex(null)
     }else{

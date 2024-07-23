@@ -21,9 +21,10 @@ const  AboutUs = () => {
           </Link>
       </div>
 
-      <p>
-       <span className=" text-orange-500 font-bold text-2xl"> Foodfusion</span>  is a food ordering web application built with React.js ⚛ and 
-        <span className='text-orange-800 font-bold'> Swiggy's Own API.</span>
+      <p className=" font-bold font-poppins">
+       <span className=" text-black font-bold text-2xl"> Foodfusion</span>  is a food based web application built with React.js ⚛ and 
+        <span className='text-orange-800 font-bold font-poppins text-lg underline pr-2'> Swiggy APIs</span>
+        for showing my REACT Skills 
       </p>
       {/* <p>
         This project was built 🔧 during the coursework of{' '}
@@ -42,7 +43,7 @@ const  AboutUs = () => {
         </a>
       </p> */}
 
-      <h2 className=" font-bold ">THIS WEB-APP IS BUILD BY PIYUSH </h2>
+      <h2 className=" font-bold mt-3">THIS WEB-APP IS BUILD BY PIYUSH FOR LEARNING PURPOSE</h2>
 
     </div>
   </div>

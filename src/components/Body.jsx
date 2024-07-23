@@ -132,60 +132,8 @@ return searchedRestaurant?.length === 0 ? (
   </div>
 
   {/* TOP RESTAURANT CONTAINER FEELING NOT NECESSARY TO BUILD */}
-  {/* <div className=" embla top-restaurant-grid  relative w-11/12 h-[220px] max-w-[1300px] mx-auto my-6 flex flex-col 
-    shadow-lg shadow-orange-300 rounded-2xl  bg-white ">
+
  
-  <div className="flex right-0 mr-6 gap-3 absolute z-10 ">
-      <button  className="embla__prev" onClick={scrollPrev}
-      ><IoChevronBackCircleSharp className=" inline text-3xl"/>
-      </button>
-
-      <button  className="embla__next " onClick={scrollNext}
-      ><IoChevronForwardCircle className=" inline text-3xl"/>
-      </button>
-    </div>
- */}
-
-
-  {/* <div className="feature-container w-full mt-10 mb-3 md:right-0 flex flex-row space-x-20 justify-center">
-    <div className="flex flex-col ">
-     <div className="flex w-96  ">
-      <input 
-        className="w-72 ml-28 md:ml-0  rounded-md text-center md:w-full"
-        type="text"
-        placeholder= "Search For Restaurant"
-        value={searchText}
-        onChange={(e) => {setSearchText(e.target.value)
-          console.log(e.target.value)
-          searchedRestaurantData(e.target.value,listOfRestaurant)}}
-      />
-
-      <button
-      className="font-bold bg-orange-500 text-white rounded-md p-2 hover:bg-orange-800 border-2 border-orange-400
-                hover:transition-all duration-300 "
-      onClick={() => {
-        searchedRestaurantData(searchText,listOfRestaurant)
-      }}>
-        Search
-      </button>
-     </div>
-    <div>
-    {errorMessage && <div className="text-[12px] md:text-[15px] font-bold mt-2 ml-28 md:ml-0 md:min-w-full overflow-hidden"> NOTHING FOUND FOR :-
-        <span className=" h-5 text-red-500  text-lg  max-w-full ">  {searchText}</span>
-      </div>}
-    </div>
-    </div>
-
-      <div className="topResContainer border-2 h-11 rounded-xl border-orange-400 bg-orange-500 p-2 cursor-pointer hover:bg-orange-800 transition-all duration-300 ">
-      <button className="  text-white font-sans font-bold hidden md:block "
-         onClick={ () => {
-          let topRatedRes =  listOfRestaurant.filter((restaurant) => restaurant?.info?.avgRating >= 4.2 )
-              return   setSearchedRestaurant(topRatedRes)}}>
-
-            '⭐' TOP RESTAURANTS '⭐'
-      </button>
-      </div>
-  </div> */}
 
   
   {/* For Mobile  */}
@@ -193,7 +141,7 @@ return searchedRestaurant?.length === 0 ? (
                          md:block">
       Top Restaurants with online food delivery in Your Area</h2>
 
-  <h2 className=" h-7 mx-auto mt-12 mb- leading-4 text-center text-2xl font-poppins font-bold shadow-md shadow-orange-400 
+  <h2 className=" h-7 mx-3 mt-12  leading-4 text-center text-2xl font-poppins font-bold shadow-md shadow-orange-400 
                       md:hidden">
      ⭐ Top Rated Restaurants ⭐</h2>
 
@@ -244,7 +192,7 @@ return searchedRestaurant?.length === 0 ? (
         key={restaurant?.info?.id}
   >    
     <div  >
-      {restaurant?.info?.avgRating >= 4.4? 
+      {restaurant?.info?.avgRating >= 4.2? 
        <TopRestaurants restaurantData={restaurant}/> 
                           : 
        <RestaurantCard restaurantData={restaurant}/>}

@@ -20,8 +20,8 @@ const RestaurantCategory = ({index, data, setShowIndex, showIndex }) => {
           ({data.itemCards.length})
           </span>
         </div>
-          <span className="text-xl mt-2 md:text-2xl md:mr-5"> <FaArrowAltCircleDown/>  </span>
-          {/* TODO: {showIndex ? <FaArrowAltCircleUp/> : <FaArrowAltCircleDown/>} */}
+          <span className="text-xl mt-2 md:text-2xl md:mr-5"> 
+          {showIndex === index ? <FaArrowAltCircleUp/> : <FaArrowAltCircleDown/> }  </span>
         </div>
 
         {showIndex === index && <ItemList items={data.itemCards} />}

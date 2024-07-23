@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState , useRef } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import useOnClickOutside from "../utils/useOnClickOutside";
 import { BsCart4 } from "react-icons/bs";
 import { TbCurrentLocation } from "react-icons/tb";
 import { MdCall } from "react-icons/md";
@@ -16,14 +17,18 @@ import { selectItemsInCart } from "../redux-store/CartSlice";
 
 export const Header = () =>  {
 
-  const [mobileDrawerOpen, isMobileDrawerOpen] = useState(false);
-  const [loginBtn, setLoginBtn] = useState("Login")
+  // const [loginBtn, setLoginBtn] = useState("Login")
+  const [open , setOpen] = useState(false)
   const onlineStatus = useOnlineStatus()
+  const ref = useRef()
 
   const toggleNavbar = () => {
-    isMobileDrawerOpen(!mobileDrawerOpen)
+    console.log("event ocuurs in tooglenavbar " )
+    setOpen(!open)
   }
     
+  useOnClickOutside(ref, () => setOpen(false))
+  
   const items = useSelector(selectItemsInCart)
     
 
@@ -32,9 +37,9 @@ export const Header = () =>  {
                           bg-slate-50 ">
           <div className=" md:max-w-[1400px] mx-auto flex justify-between items-center" >
           <Link to="/">
-          <div className="hidden md:flex ml-5 font-fira-poppins items-center relative font-extrabold text-2xl p-4">
+          <div className="hidden md:flex ml-5 font-fira-poppins items-center relative font-extrabold text-3xl p-4">
             Food <span className=" text-orange-600 md:text-3xl">fusion</span>
-              <GiBloodyStash className="inline md:text-2xl"/>
+              <GiBloodyStash className="inline mt-1 md:text-2xl"/>
           </div>
           </Link>
          
@@ -96,8 +101,8 @@ export const Header = () =>  {
     <div className=" w-full flex justify-between  ">
       <Link to="/">
           <div className=" md:hidden  font-fira-poppins items-center relative font-extrabold text-2xl p-4">
-            Food <span className=" text-orange-600 ">fusion</span>
-              <GiBloodyStash className="inline "/>
+            Food <span className=" text-orange-600  -ml-1.5 ">fusion</span>
+              <GiBloodyStash className="inline text-[18px] mb-1 "/>
           </div>
       </Link>
        
@@ -119,20 +124,21 @@ export const Header = () =>  {
                 </Link>
               </div>
 
-      <div className="bg-orange-500  md:hidden mr-4 rounded-lg">
+      <div className="bg-orange-400  md:hidden mr-4 rounded-lg">
          <button
            className=" mt-1 mx-1"
            onClick={toggleNavbar}>
-             {!mobileDrawerOpen ? <IoMenuSharp className="size-[25px]"/> : 
-                                  <AiFillCloseSquare className="size-[30px]"/>}
+             { !open ? <IoMenuSharp className="size-[25px]"/> : 
+                       <AiFillCloseSquare className="size-[25px] rounded-xl"/>}
           </button>
       </div>   
     </div>
    </div>    
 
-    {mobileDrawerOpen && 
-       <div className="w-full absolute rounded-2xl z-50  ">
-        <ul className="w-11/12 mx-auto py-8 bg-black opacity-90 gap-y-14 flex flex-col justify-center items-center rounded-lg text-lg ">
+    { open && ( <div 
+        ref={ref}
+        className="w-full absolute rounded-2xl z-50  ">
+        <ul className="w-full mx-auto py-8 bg-black opacity-95 gap-y-12 flex flex-col justify-center items-center rounded-lg text-lg ">
           <li className="text-orange-500 hover:text-blue-800">
             <Link to="/" className=" flex items-center gap-1">
              <IoHome className="text-xl"/> 
@@ -174,7 +180,8 @@ export const Header = () =>  {
               </li>
             </ul>
           
-        </div>}
+        </div>)
+}
        
     </div>)
 }
