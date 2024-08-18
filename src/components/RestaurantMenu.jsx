@@ -49,14 +49,29 @@ const RestaurantMenu = () => {
 return(
   <div className=' w-full max-w-[1200px]  mt-20 md:mt-24 mx-auto h-full bg-[#eaeaea] rounded-3xl '>
     <div className=" w-full mb-8 ">
-        <h1 className="font-bold my-2 mt-6 text-2xl text-blue-950 ml-8 md:ml-20 font-poppins">{name}</h1>
+        <h1 className="font-bold my-2 mt-6 text-2xl text-blue-950 ml-8 md:ml-36 font-poppins">{name}</h1>
         {/* MAIN CARD FOR MENU RESTAURANTS COMPONENT */}
       <div className=' w-11/12 md:w-9/12 mx-auto flex md:py-4 justify-between items-start bg-white shadow-md shadow-gray-600 rounded-3xl'>
         {/* RIGHT-SECTION */}
         <div className='w-full md:w-8/12 border border-gray-500 rounded-3xl p-8 md:ml-6 shadow-md shadow-orange-400 '>
           <div 
           className=' font-extrabold font-poppins'
-          ><span className='text-xl -ml-2'><FaStar className='inline mb-1 text-green-500'/>{avgRating} ({totalRatingsString})</span>
+          >
+       {/* <span
+        className="w-12 text-center border rounded-md text-white text-sm md:text-xl px-1 md:px-3"
+        style={
+          avgRating >= 4
+            ? { backgroundColor: "#1db458" }
+            : avgRating >= 3
+            ? { backgroundColor: "#DB7C38" }
+            : avgRating === "--"
+            ? { backgroundColor: "#1db458" }
+            : { backgroundColor: "#E31837" }
+        }
+      >
+        {avgRating} &#9733;
+       </span> */}
+          <span className='text-xl -ml-2'><FaStar className='inline mb-1 text-green-500'/>{avgRating} ({totalRatingsString})</span>
            .<span className='hidden md:block '> <LiaRupeeSignSolid className=' inline'/>{costForTwo / 100} Cost For Two</span></div>
           <div className=' text-orange-600 font-bold cursor-pointer underline'>{cuisines.join(", ")}</div>
           <div className=' my-2'>

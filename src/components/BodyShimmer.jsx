@@ -1,6 +1,6 @@
 const BodyShimmer = () => {
     return (
-      <div className="w-full h-full mt-36 ">
+      <div className="w-full h-screen mt-36 ">
         <div className="flex flex-wrap max-w-[1080px] mx-auto justify-center" data-testid="shimmer">
           <div className="hero shadow-lg m-3 mt-4 p-3 w-full h-48"></div>
           {Array(16)

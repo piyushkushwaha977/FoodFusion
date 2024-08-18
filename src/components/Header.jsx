@@ -33,7 +33,7 @@ export const Header = () =>  {
     
 
     return (
-        <div className=" fixed mb-40 w-full rounded-sm  shadow-lg z-50 
+        <div className=" top-0 right-0 left-0 fixed  w-full rounded-sm  shadow-lg z-50 
                           bg-slate-50 ">
           <div className=" md:max-w-[1400px] mx-auto flex justify-between items-center" >
           <Link to="/">

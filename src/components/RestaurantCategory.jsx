@@ -2,12 +2,12 @@ import ItemList from "./ItemList";
 import { FaArrowAltCircleDown,FaArrowAltCircleUp } from "react-icons/fa";
 
 const RestaurantCategory = ({index, data, setShowIndex, showIndex }) => {
-   
+  //  console.log("RestaurantCategory Data :: " , data)
  
   return (
     <div className=" bg-[#eaeaea] w-full ">
-      {/* Header */}
       <div className="md:w-9/12 mx-4 md:mx-auto my-4 shadow-lg p-4">
+      {/* Header */}
         <div
           className="flex justify-between cursor-pointer"
           onClick={() => setShowIndex(index)}

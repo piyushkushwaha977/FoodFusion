@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 
 const ItemList = ({ items }) => {
 
-  // console.log("Items from Itemlist " , items)
+  console.log("Items from Itemlist " , items)
   
     const dispatch = useDispatch()
   // const shorDesc = items?.item.card?.info?.description.substring(0,200)

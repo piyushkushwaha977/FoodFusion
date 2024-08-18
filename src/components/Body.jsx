@@ -1,7 +1,7 @@
 import RestaurantCard,{topRatedRestaurants} from "./RestaurantCard";
 import ShimmerRestaurant from "./BodyShimmer";
 import { Link } from "react-router-dom";
-import { useState,useEffect,useRef,useCallback } from "react";
+import { useState,useEffect,useCallback } from "react";
 import { RESTAURANT_API_URL , HOME_LAYOUT_IMG_URL} from "../utils/constant";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import useFilterRestaurants from "../utils/useFilterRestaurants"
@@ -19,12 +19,9 @@ const Body = () => {
   const [imageTable , setImageTable] = useState([])
   const [errorMessage, setErrorMessage] = useState("")
   const [emblaRef, emblaApi] = useEmblaCarousel({loop:true},[Autoplay({delay:2000})])
-  // const [isLoading, setIsLoading] = useState(true)
-  // console.log("image table " , imageTable)
   const onlineStatus = useOnlineStatus()
   const TopRestaurants = topRatedRestaurants(RestaurantCard)
 
-  
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev()
@@ -71,7 +68,8 @@ const fetchData = async() => {
 }
 
 if (onlineStatus === false) return (
-    <h1 className=" w-full items-center justify-center font-bold text-red-500 ">LOOK'S LIKE YOU ARE OFFLINE !  TURN ON YOUR DATA </h1> )
+    <h1 className=" w-full items-center justify-center font-bold text-red-500 ">
+    LOOK'S LIKE YOU ARE OFFLINE !  TURN ON YOUR DATA </h1> )
   
   {/* FUNCTION TO SERACH RESTAURANTS DYNAMICALLY MAYBE THERE IS SCOPE FOR IMPROVEMENT */}
   const searchedRestaurantData = (searchText, restaurants) => {
@@ -132,15 +130,12 @@ return searchedRestaurant?.length === 0 ? (
   </div>
 
   {/* TOP RESTAURANT CONTAINER FEELING NOT NECESSARY TO BUILD */}
-
  
-
-  
-  {/* For Mobile  */}
   <h2 className="hidden max-w-[720px] h-7 mx-auto  md:mt-12 mb-6 leading-4 text-center text-2xl font-poppins font-bold shadow-md shadow-orange-400 
                          md:block">
       Top Restaurants with online food delivery in Your Area</h2>
 
+   {/* For Mobile  */}
   <h2 className=" h-7 mx-3 mt-12  leading-4 text-center text-2xl font-poppins font-bold shadow-md shadow-orange-400 
                       md:hidden">
      ⭐ Top Rated Restaurants ⭐</h2>
@@ -154,8 +149,8 @@ return searchedRestaurant?.length === 0 ? (
         placeholder= "Search For Restaurant"
         value={searchText}
         onChange={(e) => {setSearchText(e.target.value)
-          console.log(e.target.value)
-          searchedRestaurantData(e.target.value,listOfRestaurant)}}
+          // console.log(e.target.value)
+          searchedRestaurantData(e.target.value , listOfRestaurant )}}
       />
 
       <button
@@ -191,11 +186,13 @@ return searchedRestaurant?.length === 0 ? (
   <Link className=" mx-auto" to={"/restaurants/" + restaurant?.info?.id}
         key={restaurant?.info?.id}
   >    
-    <div  >
-      {restaurant?.info?.avgRating >= 4.2? 
+    <div>
+      {restaurant?.info?.avgRating >= 4.2 
+                          ? 
        <TopRestaurants restaurantData={restaurant}/> 
                           : 
-       <RestaurantCard restaurantData={restaurant}/>}
+       <RestaurantCard restaurantData={restaurant}/>
+      }
        
     </div> 
   </Link>
