@@ -22,6 +22,7 @@ const Body = () => {
   const onlineStatus = useOnlineStatus()
   const TopRestaurants = topRatedRestaurants(RestaurantCard)
 
+  console.log("body rendered")
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev()

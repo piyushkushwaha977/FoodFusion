@@ -12,6 +12,7 @@ import { Provider } from "react-redux";
 import CartStore from "./redux-store/CartStore";
 import CartPage from "./Pages/CartPage";
 import {Toaster} from "react-hot-toast";
+import LocationPage from "./Pages/LocationPage";
 
 
 
@@ -59,6 +60,10 @@ const appRouter = createBrowserRouter([
             {
                 path: "/cart",
                 element: <CartPage/>
+            },
+            {
+                path: "/location",
+                element: <LocationPage/>
             }
             
         ],

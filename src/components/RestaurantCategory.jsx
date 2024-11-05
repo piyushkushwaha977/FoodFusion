@@ -6,13 +6,13 @@ const RestaurantCategory = ({index, data, setShowIndex, showIndex }) => {
  
   return (
     <div className=" bg-[#eaeaea] w-full ">
-      <div className="md:w-9/12 mx-4 md:mx-auto my-4 shadow-lg p-4">
+      <div className="md:w-9/12 mx-4 md:mx-auto my-4 shadow-lg p-4 hover:pl-6 hover:pr-6 transition-all duration-300">
       {/* Header */}
         <div
           className="flex justify-between cursor-pointer"
           onClick={() => setShowIndex(index)}
         >
-        <div>
+        <div className="  ">
         <span className="font-bold font-poppins text-sm md:text-xl mr-1">
             {data.title} 
           </span>   

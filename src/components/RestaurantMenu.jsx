@@ -17,8 +17,10 @@ const RestaurantMenu = () => {
   const resInfo = useRestaurantMenu(resId)
   const [showIndex, setShowIndex] = useState(0);
 
+  // console.log( "resInfo For MEnu items " , resInfo)
+
   const handleClick = (index) => {
-    console.log("index from restaurant catergory : ", index)
+    // console.log("index from restaurant catergory : ", index)
     if(index === showIndex) {
       setShowIndex(null)
     }else{
@@ -35,16 +37,15 @@ const RestaurantMenu = () => {
           "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
   );
 
-  const {name, costForTwo, avgRating,cuisines,cloudinaryImageId, areaName
-    ,totalRatingsString ,costForTwoMessage,sla:{slaString, restaurantId,deliveryTime},feeDetails:{amount="",message}} = 
+  const {name, costForTwo, avgRating,cuisines,cloudinaryImageId, areaName,slugString,totalRatingsString ,costForTwoMessage,sla:{slaString, restaurantId,deliveryTime},feeDetails:{amount="",message}} = 
   resInfo?.data?.cards[2]?.card?.card?.info
-  // const menuCardValues =  {name, costForTwo, avgRating,cuisines,cloudinaryImageId ,costForTwoMessage,sla:{slaString, restaurantId,deliveryTime},feeDetails:{amount,message}}       
+  const menuCardValues =  {name, costForTwo, avgRating,cuisines,cloudinaryImageId ,costForTwoMessage,sla:{slaString, restaurantId,deliveryTime},feeDetails:{amount,message}}       
   // console.log("menuCardValues" , menuCardValues  )
 
-  const  cleanedStr = message.replace(/<\/?[^>]+(>|$)/g, "") 
+  const  cleanedStr = message?.replace(/<\/?[^>]+(>|$)/g, "") 
 
   // console.log("ALL THE CATEGORIES" , categories)
-  
+
 
 return(
   <div className=' w-full max-w-[1200px]  mt-20 md:mt-24 mx-auto h-full bg-[#eaeaea] rounded-3xl '>
@@ -81,7 +82,7 @@ return(
 
           <div className='border border-b-slate-200'></div>
 
-          <div className=' mt-2'> <FaBiking className='inline size-6 text-[15px] md:text-xl'/> {cleanedStr}</div>
+          <div className=' mt-2'> <FaBiking className='inline size-6 text-[15px] md:text-xl'/> {cleanedStr ? cleanedStr : slugString}</div>
 
         </div>
         {/* LEFT-SECTION-FOR-IMAGE */}

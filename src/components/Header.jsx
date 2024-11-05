@@ -85,7 +85,7 @@ export const Header = () =>  {
                 </Link>
               </li>
           <Link to='/location' className="hidden lg:block">
-            <div className="cursor-pointer  md:px-3 md:mr-6 mb-2 flex items-center ">
+            <div className="cursor-pointer md:mr-12 mb-2 flex items-center ">
                 <TbCurrentLocation className="text-xl text-orange-400" />Location
                 </div>
           </Link>
